@@ -1,6 +1,10 @@
 <?php
 session_start();
 include "koneksi.php";
+if (!isset($_SESSION["user"])) {
+  header("Location: Joflix.php");
+  exit;
+}
 
 $nama = $_POST["nama"];
 $email = $_POST["email"];
